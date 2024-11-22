@@ -133,7 +133,7 @@ class MsWordDocumentBackend(DeclarativeDocumentBackend):
         for element in body:
             tag_name = etree.QName(element).localname
             # Check for Inline Images (blip elements)
-            drawing_blip = element.xpath(".//a:blip")
+            drawing_blip = None#element.xpath(".//a:blip")
 
             # Check for Tables
             if element.tag.endswith("tbl"):
