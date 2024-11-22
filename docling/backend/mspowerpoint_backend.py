@@ -381,7 +381,9 @@ class MsPowerpointDocumentBackend(DeclarativeDocumentBackend, PaginatedDocumentB
                     self.handle_tables(shape, parent_slide, slide_ind, doc)
                 if shape.shape_type == MSO_SHAPE_TYPE.PICTURE:
                     # Handle Pictures
-                    self.handle_pictures(shape, parent_slide, slide_ind, doc)
+                    pass
+                    # temporary workaround to skip picture processing
+                    #self.handle_pictures(shape, parent_slide, slide_ind, doc)
                 # If shape doesn't have any text, move on to the next shape
                 if not hasattr(shape, "text"):
                     return
